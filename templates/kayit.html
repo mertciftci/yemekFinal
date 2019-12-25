@@ -1,0 +1,40 @@
+{% extends "sablon.html" %} {% block icerik %}
+
+<!-- flash() ile app.py'den gelen hata varsa öncelikle bunları sayfada gösterelim-->
+{% with hatalar = get_flashed_messages() %} {% if hatalar %} {% for hata in
+hatalar %}
+<div class="p-3 mb-2 bg-danger text-white">{{ hata }}</div>
+{% endfor %} {% endif %} {% endwith %}
+<br />
+<br />
+
+<div class="w3-panel w3-pale-green w3-center">
+  <h1>Kayıt Ol</h1>
+  <!-- Sayfa içeriği -->
+
+  <form action="/kayit" method="POST">
+    <div class="form-group w3-center">
+      <h3>E-Posta:</h3>
+      <input
+        type="email"
+        class="form-control w3-center"
+        id="eposta"
+        name="eposta"
+        placeholder="E-posta adresiniz"
+        required
+      />
+      <h3>Şifreniz:</h3>
+      <input
+        type="password"
+        class="form-control w3-center"
+        id="sifre"
+        name="sifre"
+        placeholder="Şifreniz"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydol</button>
+  </form>
+</div>
+
+{% endblock %}

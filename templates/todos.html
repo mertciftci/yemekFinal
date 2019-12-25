@@ -1,0 +1,64 @@
+{% extends "sablon.html" %} {% block icerik %}
+<!-- Sayfa içeriği -->
+<h1>Sitemizdeki Yemekler</h1>
+<hr />
+<div class="w3-container w3-center">
+  <form class="form-inline" action="/ekle" method="POST">
+    <div class="form-group mb-2">
+      <h3>Yemeğin Adı:</h3>
+      <input
+        type="text"
+        class="form-control-plaintext"
+        id="isim"
+        name="isim"
+        placeholder="Yemeğin İsmi"
+        required
+      />
+      <h3>Yemeğin Tarifi:</h3>
+      <textarea
+        type="text"
+        class="form-control-textare"
+        id="durum"
+        name="durum"
+        placeholder="Yemeğin Tarifi"
+        required
+        rows="10"
+        cols="50"
+      ></textarea>
+      <h3>Yemeğin Adı:</h3>
+      <input
+        type="text"
+        class="form-control-plaintext"
+        id="resim"
+        name="resim"
+        placeholder="Yemeğin Resim URL'si"
+        required
+      />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary mb-2">Yemeği Ekle</button>
+  </form>
+</div>
+<div class="w3-container w3-center">
+  <br />
+  <br />
+  <h2>Eklenen Yemekler</h2>
+  {% for yap in yapilacaklar %}
+
+  <div class="w3-card-4 w3-dark-grey" style="width:50%">
+    <h3>{{ yap.get('isim') }}</h3>
+    <img src="{{ yap.get('resim') }}" alt="Avatar" style="width:80%" />
+    <h5>{{ yap.get('durum') }}</h5>
+
+    <div class="w3-section">
+      <button class="w3-button w3-red">
+        <a href="/sil/{{ yap.get('_id') }}"> Sil</a>
+      </button>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  {% endfor %}
+</div>
+{% endblock %}

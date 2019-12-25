@@ -1,0 +1,88 @@
+{% extends "sablon.html" %} {% block icerik %}
+    <!-- Hoşgeldiniz yazısı -->
+    <div
+      class="w3-content"
+      style="max-width:1100px;margin-top:80px;margin-bottom:80px"
+    >
+      <div class="w3-panel">
+        <h1><b>Hoşgeldiniz</b></h1>
+        <p>Şeflerimizi aşağıda görebilirsiniz..</p>
+      </div>
+    </div>
+  </body>
+</html>
+<!-- En İyi Şefler -->
+<div class="w3-row-padding" id="eniyisefler">
+  <div class="w3-center w3-padding-64">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16"
+      >En İyi Şeflerimiz</span
+    >
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-card-4">
+      <img src="static/img/mustafa.jpg" alt="mustafa" style="width:100%" />
+      <div class="w3-container">
+        <h3>Mustafa Ulubay</h3>
+        <p class="w3-opacity">Web Tasarım Uzmanı</p>
+        <p>
+          Tatlı yiyecekler konusunda üzerime yoktur. Profilimde tarifleri
+          görebilirsiniz.
+        </p>
+        <p>
+          <button
+            onclick="alert('Veri Tabanı eklendiğinde profiller görünecektir..')"
+            class="w3-button w3-light-grey w3-block"
+          >
+            Profile ilerle
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-card-4">
+      <img src="static/img/caglar.jpg" alt="caglar" style="width:100%" />
+      <div class="w3-container">
+        <h3>Çağlar Kont</h3>
+        <p class="w3-opacity">Yazılım Geliştiricisi</p>
+        <p>
+          Damak zevkime çok güvenirim. Sizinde beğeneceğinizi düşündüğüm tüm
+          yemekler profilimde.
+        </p>
+        <p>
+          <button
+            onclick="alert('Veri Tabanı eklendiğinde profiller görünecektir..')"
+            class="w3-button w3-light-grey w3-block"
+          >
+            Profile İlerle
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-card-4">
+      <img src="static/img/mert.jpg" alt="Jane" style="width:100%" />
+      <div class="w3-container">
+        <h3>Mert Çiftçi</h3>
+        <p class="w3-opacity">İşletim Sistemi Uzmanı</p>
+        <p>
+          Dünya mutfaklarına çok ilgiliyim. Farklı tatlar denemek isterseniz
+          profilimi ziyaret edin.
+        </p>
+        <p>
+          <button
+            onclick="alert('Veri Tabanı eklendiğinde profiller görünecektir..')"
+            class="w3-button w3-light-grey w3-block"
+          >
+            Profile ilerle
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "sablon.html" %} {% block icerik %}
+<!-- Hoşgeldiniz yazısı -->
+<div
+  class="w3-content"
+  style="max-width:1100px;margin-top:80px;margin-bottom:80px"
+>
+  <div class="w3-panel">
+    <h1><b>Hoşgeldiniz</b></h1>
+    <p>En nefis yemek tarifleri için en doğru yerdesin..</p>
+  </div>
+
+  <!-- Sliderdeki Resimler -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+      <img src="static/img/et.jpg" style="width:100%" />
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="static/img/pizza.jpg" style="width:100%" />
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="static/img/tavuk.jpg" style="width:100%" />
+    </div>
+
+    <!-- Slider ileri geri butonları -->
+    <div class="w3-container w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)">
+        <i class="fa fa-arrow-circle-left w3-hover-text-teal"></i>
+      </div>
+      <div class="w3-right" onclick="plusDivs(1)">
+        <i class="fa fa-arrow-circle-right w3-hover-text-teal"></i>
+      </div>
+
+      <div class="w3-center">
+        <span
+          class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+          onclick="currentDiv(1)"
+        ></span>
+        <span
+          class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+          onclick="currentDiv(2)"
+        ></span>
+        <span
+          class="w3-tag demodots w3-border w3-transparent w3-hover-white"
+          onclick="currentDiv(3)"
+        ></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Biz neden varız kısmı -->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16"
+        >Biz Neden Varız ?</span
+      >
+    </div>
+    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Zaman Tasarrufu</h3>
+      <p>
+        Sadece hafta sonları değil istediğiniz her zaman en güzel yemekleri
+        yapmanız için..
+      </p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+      <h3>Kolaylık</h3>
+      <p>
+        Güzel yemekler yapmak için aşcı olmanıza gerek yok. Doğru tarifi
+        bilmeniz yeterli..
+      </p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+      <h3>Sağlık</h3>
+      <p>
+        Dışarıdan yemek seni şişmanlatır. Doğru tariflerle sağlıklı yemekleri
+        yapabilirsin..
+      </p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+      <h3>Mutluluk</h3>
+      <p>
+        Çayının yanına, en güzel kurabiyeleri sen yapacaksın. Biraz şımarmaya
+        hakkın var..
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <title>Enfes Yemek Tarifleri</title>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      </head>
+  
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <body>
+    <!-- Sitenin Giriş Barı -->
+    <div class="w3-top">
+      <div class="w3-row w3-large w3-light-grey">
+        <div class="w3-col s2 w3-center">
+          <a href="/yemekSite" class="w3-button w3-block">Ana Sayfa</a>
+        </div>
+        <div class="w3-col s2 w3-center">
+          <a href="/todos" class="w3-button w3-block">Eklenen Yemekler</a>
+        </div>
+        <div class="w3-col s2 w3-center">
+          <a href="/eniyisefler" class="w3-button w3-block">En İyi Şefler</a>
+        </div>
+        <div class="w3-col s2 w3-center">
+          <a href="/kayit" class="w3-button w3-block center">Kayıt Ol</a>
+        </div>
+        <div class="w3-col s2 w3-center">
+          <a href="/giris" class="w3-button w3-block center">Giriş</a>
+        </div>
+        <div class="w3-col s2 w3-center">
+          <a href="/kapat" class="w3-button w3-block center">Çıkış</a>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    {% block icerik %} {% endblock %}
+
+    <!-- Sosyal medya adresleri/footer -->
+
+    <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+      <h4>Sosyal Medya Adreslerimiz</h4>
+      <a href="#" class="w3-button w3-black w3-margin"
+        ><i class="fa fa-arrow-up w3-margin-right"></i>Ana Sayfa</a
+      >
+      <div class="w3-xlarge w3-section">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+      </div>
+    </footer>
+
+    <script>
+      // Slideshow
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs((slideIndex += n));
+      }
+
+      function currentDiv(n) {
+        showDivs((slideIndex = n));
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demodots");
+        if (n > x.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = x.length;
+        }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" w3-white", "");
+        }
+        x[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " w3-white";
+      }
+    </script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  </body>
+</html>
