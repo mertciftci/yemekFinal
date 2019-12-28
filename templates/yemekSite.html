@@ -87,4 +87,23 @@
     </div>
   </div>
 </div>
+<div class="w3-container w3-center">
+  <br />
+  <br />
+  <h2>Eklenen Yemekler</h2>
+  {% for yap in yapilacaklar %}
+
+  <div class="w3-card-4 w3-dark-grey" style="width:100%">
+    <h3>{{ yap.get('isim') }}</h3>
+
+    <img src="{{ yap.get('resim') }}" alt="Avatar" style="width:60%" />
+    <div class="center">
+      <h5 class="w3-center">{{ yap.get('durum') }}</h5>
+    </div>
+  </div>
+  <br />
+  <br />
+
+  {% endfor %}
+</div>
 {% endblock %}

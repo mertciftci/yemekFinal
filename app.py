@@ -23,7 +23,19 @@ def eniyisefler():
 
 @app.route('/')
 def yemekSite():
-    return render_template('yemekSite.html')
+    yapilacaklar = []
+    for yap in todo.find():
+        yapilacaklar.append({
+            "_id": str(yap.get("_id")),
+            "isim": yap.get("isim"),
+            "durum": yap.get("durum"),
+            "resim": yap.get("resim")
+        })
+    # index.html'e bu listeyi gönder
+    return render_template('yemekSite.html', yapilacaklar=yapilacaklar)
+
+
+    
 
 @app.route('/kayit', methods=['GET','POST'])
 def kayit():
@@ -98,17 +110,6 @@ def todos():
     # index.html'e bu listeyi gönder
     return render_template('todos.html', yapilacaklar=yapilacaklar)
 
-
-@app.route('/guncelle/<id>')
-def guncelle(id):
-    # Gelen id değeri ile kaydı bulalım
-    yap = todo.find_one({'_id': ObjectId(id)})
-    # Durum değeri True ise False, False ise True yapalım
-    durum = not yap.get('durum')
-    # kaydı güncelle
-    todo.find_one_and_update({'_id': ObjectId(id)}, {'$set': {'durum': durum}})
-    # ana sayfaya yönlendir
-    return redirect('/todos')
 
 
 @app.route('/sil/<id>')
