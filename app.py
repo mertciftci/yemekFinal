@@ -75,7 +75,7 @@ def giris():
             # kullanıcının epostasını session içine al
             session['eposta'] = eposta
             # todo ekleyebileceği sayfaya yönlendiriyoruz.
-            return redirect('/todos')
+            return redirect('/yemekekle')
         else:
             flash("Hatalı şifre girdiniz")
             return redirect('/giris')
@@ -90,8 +90,8 @@ def kapat():
     return redirect('/')
     
 
-@app.route('/todos')
-def todos():
+@app.route('/yemekekle')
+def yemekekle():
     # yetkisiz kullanıcılar giremesin
     if 'eposta' not in session:
         flash("Bu sayfayı görebilmeniz için giriş yapmalısınız..")
@@ -108,7 +108,7 @@ def todos():
             "resim": yap.get("resim")
         })
     # index.html'e bu listeyi gönder
-    return render_template('todos.html', yapilacaklar=yapilacaklar)
+    return render_template('yemekekle.html', yapilacaklar=yapilacaklar)
 
 
 
@@ -117,7 +117,7 @@ def sil(id):
     # id'si gelen kaydı sil
     todo.find_one_and_delete({'_id': ObjectId(id)})
     # ana sayfaya gönder
-    return redirect('/todos')
+    return redirect('/yemekekle')
 
 
 @app.route('/ekle', methods=['POST'])
@@ -129,7 +129,7 @@ def ekle():
     resim = request.form.get('resim')
     todo.insert_one({'isim': isim, 'durum': durum, 'resim':resim})
     # ana sayfaya yönlendir
-    return redirect('/todos')
+    return redirect('/yemekekle')
 
 # hatalı ya da olmayan bir url isteği gelirse
 # hata vermesin, ana sayfaya yönlendirelim
